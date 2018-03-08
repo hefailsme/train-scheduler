@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/flatly/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <title>ALL ABOARD</title>
+</head>
+
+<body>
+    <!-- Train Scheduler -->
+    <div class="container">
+        <!-- jumbotron title header -->
+        <div class="jumbotron jumbotron-fluid" style="background-color: brown">
+            <h1 class="jumbo-head" style="font-family: 'Quicksand', sans-serif; font-size: 60px; text-align: center; color: aquamarine">I'M ON A TRAIN, I CAN'T COMPLAIN</h1>
+            <p class="lead-p" style="font-family: 'Quicksand', sans-serif; text-align: center; color: aquamarine">Let's get you where you need to go.</p>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- Current Employees-->
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            <strong>Current Train Schedule</strong>
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        <table id="schedule-table" class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Train Name</th>
+                                    <th scope="col">Destination</th>
+                                    <th scope="col">Frequency (min)</th>
+                                    <th scope="col">Next Arrival</th>
+                                    <th scope="col">Minutes Away</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Add Train  -->
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                <strong>Add Train</strong>
+                            </h3>
+                        </div>
+                        <div class="panel-body">
+                            <form>
+                                <!-- <div class="train-form"> -->
+                                <div class="form-group">
+                                    <label for="name-input">Train Name</label>
+                                    <input type="text" class="form-control" id="train-name-input" placeholder="Enter Train Name Here...">
+                                </div>
+                                <div class="form-group">
+                                    <label for="destination-input">Destination</label>
+                                    <input type="text" class="form-control" id="destination-input" placeholder="Enter Destination Here...">
+                                </div>
+                                <label for="first-train-input">First Train Time (HH:mm - military time)</label>
+                                <input type="text" class="form-control" id="first-train-input" placeholder="First Train Arrival Time...">
+                                <div class="form-group">
+                                    <label for="frequency-input ">Frequency</label>
+                                    <input type="text" class="form-control" id="frequency-input" placeholder="Frequency">
+                                </div>
+                                <button type="submit" class="btn btn-primary" data-toggle="button" id="add-train-btn" aria-pressed="false" autocomplete="off">
+                                    Add Train
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- jQuery -->
+    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAejIPaVfZKyGq74reBEPTJXrRfMpi5RRA",
+            authDomain: "firb-project-79.firebaseapp.com",
+            databaseURL: "https://firb-project-79.firebaseio.com",
+            projectId: "firb-project-79",
+            storageBucket: "firb-project-79.appspot.com",
+            messagingSenderId: "358913791453"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="assets/train.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+</body>
+
+</html>
